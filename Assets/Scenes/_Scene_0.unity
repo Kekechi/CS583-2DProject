@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -496,6 +496,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainPaths:
   - {fileID: 258927106}
+  startStation: {fileID: 2126462974}
+  player: {fileID: 2058816895}
+--- !u!1 &2058816894 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8136410339014496373, guid: 77ceb679da015e2459f7a1b1067bfb97, type: 3}
+  m_PrefabInstance: {fileID: 4329125153712343638}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2058816895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058816894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdb12faf70fa978418d9b2af08b1b464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStationOffset: {x: 0, y: 0, z: 0}
+  speed: 0
 --- !u!1001 &2126462973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -694,7 +715,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8136410339014496373, guid: 77ceb679da015e2459f7a1b1067bfb97, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2058816895}
   m_SourcePrefab: {fileID: 100100000, guid: 77ceb679da015e2459f7a1b1067bfb97, type: 3}
 --- !u!1001 &4628820697188915592
 PrefabInstance:
