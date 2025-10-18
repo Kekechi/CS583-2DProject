@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class TourTokyo : MonoBehaviour
 {
-    public GameObject[] trainPaths;
-    public GameObject startStation;
-    public Player player;
+    public enum GameState { GameStart, IdleOnStation, Moving, Arrived, GameEnd }
+    public GameState State { get; private set; }
+
+    [SerializeField] private GameObject[] trainPaths;
+    [SerializeField] private GameObject startStation;
+    [SerializeField] private Player player;
     // Start is called before the first frame update
     void Start()
     {
-        player.initialize(startStation);
+        player.Initialize(startStation);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
+    public void SelectStation(GameObject station)
+    {
+        player.SelectDestination(station, () => { });
     }
 }

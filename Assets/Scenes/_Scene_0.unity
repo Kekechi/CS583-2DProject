@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainPaths:
   - {fileID: 258927106}
-  startStation: {fileID: 2126462974}
+  startStation: {fileID: 4628820697188915593}
   player: {fileID: 2058816895}
 --- !u!1 &2058816894 stripped
 GameObject:
@@ -515,8 +515,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb12faf70fa978418d9b2af08b1b464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStationOffset: {x: 0, y: 0, z: 0}
-  speed: 0
+  playerStationOffset: {x: 0.03, y: 0, z: 0}
+  duration: 1
+  destStation: {fileID: 382422782}
 --- !u!1001 &2126462973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -592,6 +593,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: Stations.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: stations.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -650,6 +655,14 @@ PrefabInstance:
     - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977990044123824029, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a09c0fb61d00cbf4aa49de445b6e8de3, type: 2}
+    - target: {fileID: 1977990044123824029, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5839906958935900260, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: m_Name
