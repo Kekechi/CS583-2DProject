@@ -1,26 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Station : MonoBehaviour
 {
-    private TourTokyo game;
+    [NonSerialized] public HashSet<TrainPath> Lines = new HashSet<TrainPath>();
+    public string Name;
+    public Sprite ImageSprite;
+    public string Description;
 
-    void Start()
-    {
-        game = Camera.main.GetComponent<TourTokyo>();
-    }
     void OnMouseEnter()
     {
 
+        InfoBoard.Instance.DisplayStationInfo(Name, ImageSprite, 2, InfoBoard.LineSetToString(Lines), Description);
     }
 
     void OnMouseExit()
     {
-
+        InfoBoard.Instance.DisableDisplay();
     }
     void OnMouseDown()
     {
-        game.SelectStation(gameObject);
+        TourTokyo.Instance.SelectStation(gameObject);
     }
 }

@@ -53,8 +53,7 @@ LineRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 679bfa6c36fe6bf4a833432779c5d4e7, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,7 +79,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -149,3 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ac9ccccc7aa9842b5b0bf56a790fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stations: []
+  segmentTime: []
+  isLoop: 0
