@@ -188,7 +188,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -255,6 +255,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03cc1614413b1e944910a651773d6fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 2100000, guid: e3b43bc6848d33e46942abb43f07d44d, type: 2}
+  selectedMaterial: {fileID: 2100000, guid: 29dc66592874bdb43ad78f2bcf999aa6, type: 2}
+  emission: {r: 0.2509804, g: 0.2509804, b: 0.2509804, a: 1}
   Name: Default Name
   ImageSprite: {fileID: 21300000, guid: 91049c407bc6f6148a1dae35bae89b67, type: 3}
   Description: Default Description

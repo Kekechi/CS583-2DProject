@@ -6,23 +6,41 @@ using UnityEngine;
 
 public class Station : MonoBehaviour
 {
-    [NonSerialized] public HashSet<TrainPath> Lines = new HashSet<TrainPath>();
+    [NonSerialized] public HashSet<TrainLine> Lines = new HashSet<TrainLine>();
+    [SerializeField] private Color emission;
+
     public string Name;
     public Sprite ImageSprite;
     public string Description;
+    private Material material;
+
+    void Awake()
+    {
+        material = GetComponent<Renderer>().material;
+    }
+
+    public void EnableHighlight()
+    {
+        material.EnableKeyword("_EMISSION");
+        material.SetColor("_EmissionColor", emission);
+    }
+    public void DisableHighlight()
+    {
+        material.DisableKeyword("_EMISSION");
+    }
 
     void OnMouseEnter()
     {
-
-        InfoBoard.Instance.DisplayStationInfo(Name, ImageSprite, 2, InfoBoard.LineSetToString(Lines), Description);
+        TourTokyo.Instance.OnHoverEnterStation(this);
     }
 
     void OnMouseExit()
     {
-        InfoBoard.Instance.DisableDisplay();
+        TourTokyo.Instance.OnHoverExitStation(this);
     }
+
     void OnMouseDown()
     {
-        TourTokyo.Instance.SelectStation(gameObject);
+        TourTokyo.Instance.SelectStation(this);
     }
 }
