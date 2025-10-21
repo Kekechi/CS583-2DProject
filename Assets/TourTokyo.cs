@@ -139,6 +139,7 @@ public class TourTokyo : MonoBehaviour
                         else
                         {
                             State = GameState.GameEnd;
+                            GameEndUI.OnGameEnd();
                         }
                         InfoBoard.Instance.DisableDisplay();
                     }));
