@@ -1,9 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
-using System.Linq;
 using UnityEngine;
 
 public class TourTokyo : MonoBehaviour
@@ -38,16 +35,16 @@ public class TourTokyo : MonoBehaviour
     {
         if (State == GameState.IdleOnStation)
         {
-            var res = GetShortestPath(station.gameObject);
+            TrainLine.TrainPath res = GetShortestPath(station.gameObject);
             if (res.path.Length > 0)
             {
                 station.EnableHighlight();
                 res.line.HighlightPath(res.path, res.isReverse);
-                InfoBoard.Instance.DisplayStationInfo(station.Name, station.ImageSprite, res.timeCost, station.VisitTime, InfoBoard.LineSetToString(station.Lines), station.Description, station.IsIntersection() ? transferTime : -1);
+                InfoBoard.Instance.DisplayStationInfo(station.Name, station.ImageSprite, res.totalTime, station.VisitTime, InfoBoard.LineSetToString(station.Lines), station.Description, station.IsIntersection() ? transferTime : -1);
             }
             else
             {
-                InfoBoard.Instance.DisplayStationInfo(station.Name, station.ImageSprite, 0, station.VisitTime, InfoBoard.LineSetToString(station.Lines), station.Description, station.IsIntersection() ? transferTime : -1);
+                InfoBoard.Instance.DisplayStationInfo(station.Name, station.ImageSprite, -1, station.VisitTime, InfoBoard.LineSetToString(station.Lines), station.Description, station.IsIntersection() ? transferTime : -1);
             }
         }
     }
@@ -161,27 +158,21 @@ public class TourTokyo : MonoBehaviour
         callback();
     }
 
-    (GameObject[] path, int timeCost, TrainLine line, bool isReverse) GetShortestPath(GameObject destination)
+    TrainLine.TrainPath GetShortestPath(GameObject destination)
     {
         HashSet<TrainLine> setIntersect = new HashSet<TrainLine>(player.CurrentStation.GetComponent<Station>().Lines);
         setIntersect.IntersectWith(destination.GetComponent<Station>().Lines);
-        GameObject[] path = new GameObject[0];
-        int time = 24 * 60;
-        TrainLine selectedLine = null;
-        bool isReverse = false;
+        TrainLine.TrainPath path = new TrainLine.TrainPath();
 
         foreach (TrainLine line in setIntersect)
         {
-            var res = line.FindPath(player.CurrentStation, destination);
-            if (res.time < time)
+            TrainLine.TrainPath newPath = line.FindPath(player.CurrentStation, destination);
+            if (newPath.totalTime < path.totalTime)
             {
-                time = res.time;
-                selectedLine = line;
-                isReverse = res.isReverse;
-                path = res.path;
+                path = newPath;
             }
         }
-        return (path, time, selectedLine, isReverse);
+        return path;
     }
     void TraversePath(GameObject destination, Action callback)
     {
@@ -190,27 +181,30 @@ public class TourTokyo : MonoBehaviour
             return;
         }
 
-        var res = GetShortestPath(destination);
-        MovePlayer(res.path, res.line, res.isReverse, callback);
+        TrainLine.TrainPath path = GetShortestPath(destination);
+        MovePlayer(path, callback);
     }
 
-    void MovePlayer(GameObject[] path, TrainLine line, bool isReverse, Action callback)
+    void MovePlayer(TrainLine.TrainPath path, Action callback)
     {
+        GameObject[] pathArr = path.path;
+        bool isReverse = path.isReverse;
+        TrainLine line = path.line;
         int pathIndex = 0;
         void NextPath()
         {
             pathIndex++;
-            if (pathIndex < path.Length)
+            if (pathIndex < pathArr.Length)
             {
-                int segmentIndex = line.DstStationToSegmentIndex(path[pathIndex], isReverse);
-                player.SelectDestination(path[pathIndex], line.GetSegmentTime(segmentIndex), NextPath);
+                int segmentIndex = line.DstStationToSegmentIndex(pathArr[pathIndex], isReverse);
+                player.SelectDestination(pathArr[pathIndex], line.GetSegmentTime(segmentIndex), NextPath);
             }
             else
             {
                 callback();
             }
         }
-        player.SelectDestination(path[pathIndex], line.GetSegmentTime(line.DstStationToSegmentIndex(path[0], isReverse)), NextPath);
+        player.SelectDestination(pathArr[pathIndex], line.GetSegmentTime(line.DstStationToSegmentIndex(pathArr[0], isReverse)), NextPath);
     }
     void OffsetOverlappingLines(float offset)
     {

@@ -25,7 +25,7 @@ public class InfoBoard : MonoBehaviour
         nameText.text = name;
         infoImage.sprite = image;
         lines.text = $"Train Lines: {lineNames}";
-        time.text = $"Estimated Time: <b>{timeCost} min</b>";
+        time.text = timeCost == -1 ? "Unreachable without Transfer" : $"Estimated Time: <b>{timeCost} min</b>";
         this.visitTime.text = $"Visit Time: <b>{visitTime} min</b>{((transferTime == -1) ? "" : $"  Transfer Time: <b>{transferTime} min</b>")}";
         description.text = newDescription;
         gameObject.SetActive(true);

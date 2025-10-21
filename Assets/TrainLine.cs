@@ -1,9 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class TrainLine : MonoBehaviour
 {
+    public class TrainPath
+    {
+        public TrainPath()
+        {
+            path = new GameObject[0];
+            totalTime = 24 * 60;
+            isReverse = false;
+            line = null;
+        }
+        public TrainPath(GameObject[] path, int totalTime, bool isReverse, TrainLine line)
+        {
+            this.path = path;
+            this.totalTime = totalTime;
+            this.isReverse = isReverse;
+            this.line = line;
+        }
+        public GameObject[] path;
+        public int totalTime;
+        public bool isReverse;
+        public TrainLine line;
+    }
     [SerializeField] private GameObject[] stations;
     [SerializeField] private int[] segmentTime;
     [SerializeField] private bool isLoop;
@@ -65,43 +87,50 @@ public class TrainLine : MonoBehaviour
         return renderer;
     }
 
-    public (GameObject[] path, int time, bool isReverse) FindPath(GameObject source, GameObject destination)
+    public TrainPath FindPath(GameObject source, GameObject destination)
     {
         int srcIndex = stationIndex[source];
-        int destIndex = stationIndex[destination];
-        int pathLength = (stations.Length + destIndex - srcIndex) % stations.Length;
+        int dstIndex = stationIndex[destination];
 
+        TrainPath path;
+
+        if (isLoop)
+        {
+            TrainPath path1 = GetPath(srcIndex, dstIndex, false);
+            TrainPath path2 = GetPath(srcIndex, dstIndex, true);
+            path = path1.totalTime < path2.totalTime ? path1 : path2;
+
+        }
+        else
+        {
+            if (srcIndex < dstIndex)
+            {
+                path = GetPath(srcIndex, dstIndex, false);
+            }
+            else
+            {
+                path = GetPath(srcIndex, dstIndex, true);
+            }
+        }
+
+        return path;
+    }
+
+    TrainPath GetPath(int srcIndex, int dstIndex, bool isReverse)
+    {
+        int direction = isReverse ? -1 : 1;
+        int pathLength = (stations.Length + direction * (dstIndex - srcIndex)) % stations.Length;
         int pathTime = 0;
         GameObject[] path = new GameObject[pathLength];
-
         for (int i = 0; i < pathLength; i++)
         {
-            int pathIndex = (srcIndex + i + 1) % stations.Length;
-            int timeIndex = (srcIndex + i) % segments.Length;
+            int pathIndex = (stations.Length + srcIndex + direction * (i + 1)) % stations.Length;
+            int timeIndex = isReverse ? pathIndex : (srcIndex + i) % segments.Length;
             path[i] = stations[pathIndex];
             pathTime += segmentTime[timeIndex];
         }
 
-        if (isLoop)
-        {
-            int revPathTime = 0;
-            int revPathLength = (stations.Length + srcIndex - destIndex) % stations.Length;
-            GameObject[] revPath = new GameObject[revPathLength];
-
-            for (int i = 0; i < revPathLength; i++)
-            {
-                int pathIndex = (stations.Length + srcIndex - i - 1) % stations.Length;
-                revPath[i] = stations[pathIndex];
-                revPathTime += segmentTime[pathIndex];
-            }
-
-            if (revPathTime < pathTime)
-            {
-                return (revPath, revPathTime, true);
-            }
-        }
-
-        return (path, pathTime, false);
+        return new TrainPath(path, pathTime, isReverse, this);
     }
 
     public void HighlightPath(GameObject[] path, bool isReverse)
