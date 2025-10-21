@@ -15,11 +15,12 @@ public class StampRallyUI : MonoBehaviour
         public Sprite Gray;
         public GameObject Group;
         public int CompletionPoints = 100;
-
         private Image[] images;
         private int i = 0;
-        public void Initialize()
+        private AudioClip clip;
+        public void Initialize(AudioClip clip)
         {
+            this.clip = clip;
             images = Group.GetComponentsInChildren<Image>().Where(c => c.gameObject != Group).ToArray();
             foreach (Image img in images) { img.sprite = Gray; }
         }
@@ -45,6 +46,7 @@ public class StampRallyUI : MonoBehaviour
                     yield return null;
                 }
                 images[i].transform.localScale = origScale;       // settle
+                AudioController.PlayClip(clip);
                 i++;
             }
             callback();
@@ -61,13 +63,15 @@ public class StampRallyUI : MonoBehaviour
     }
 
     [SerializeField] private GenreStamp[] stamps;
+
+    [SerializeField] private AudioClip stampSound;
     public static Dictionary<TourTokyo.Genre, GenreStamp> GenreStamps = new Dictionary<TourTokyo.Genre, GenreStamp>();
     // Start is called before the first frame update
     void Start()
     {
         foreach (GenreStamp stamp in stamps)
         {
-            stamp.Initialize();
+            stamp.Initialize(stampSound);
             GenreStamps[stamp.Genre] = stamp;
         }
     }

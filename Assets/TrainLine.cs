@@ -152,7 +152,7 @@ public class TrainLine : MonoBehaviour
         }
         else
         {
-            segmentIndex = (pathIndex - 1 + stations.Length) % segments.Length;
+            segmentIndex = (pathIndex - 1 + segments.Length) % segments.Length;
         }
         return segmentIndex;
     }

@@ -10,12 +10,14 @@ public class Station : MonoBehaviour
     [NonSerialized] public HashSet<TrainLine> Lines = new HashSet<TrainLine>();
     [SerializeField] private Color emission;
     [SerializeField] private TextMeshProUGUI label;
+    [SerializeField] private AudioClip click;
 
     public string Name;
     public Sprite ImageSprite;
     public string Description;
     public int VisitTime;
     public int Points;
+    public string NearestStations;
     public TourTokyo.Genre genre;
     private Material material;
 
@@ -55,6 +57,7 @@ public class Station : MonoBehaviour
 
     void OnMouseDown()
     {
+        AudioController.PlayClip(click);
         TourTokyo.Instance.SelectStation(this);
     }
 }

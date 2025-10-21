@@ -5,17 +5,15 @@ using UnityEngine;
 
 public class TimeUI : MonoBehaviour
 {
-    public static TimeUI Instance;
-    private TextMeshProUGUI text;
-    private int _gameTime = 0;
+    private static TextMeshProUGUI text;
+    private static int _gameTime = 0;
 
     void Awake()
     {
-        Instance = this;
         text = GetComponent<TextMeshProUGUI>();
     }
 
-    public int GameTime
+    public static int GameTime
     {
         get => _gameTime;
         set

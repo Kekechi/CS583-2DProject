@@ -29,8 +29,8 @@ public class TourTokyo : MonoBehaviour
     {
         player.Initialize(startStation);
         State = GameState.IdleOnStation;
-        TimeUI.Instance.GameTime = startTime;
-        OffsetOverlappingLines(0.1f);
+        TimeUI.GameTime = startTime;
+        OffsetOverlappingLines(0.15f);
         InfoBoard.Instance.DisableDisplay();
     }
 
@@ -43,11 +43,11 @@ public class TourTokyo : MonoBehaviour
             {
                 station.EnableHighlight();
                 res.line.HighlightPath(res.path, res.isReverse);
-                InfoBoard.Instance.DisplayStationInfo(station.Name, station.ImageSprite, res.totalTime, station.VisitTime, InfoBoard.LineSetToString(station.Lines), station.Description, station.IsIntersection() ? transferTime : -1);
+                InfoBoard.Instance.DisplayStationInfo(station.Name, station.ImageSprite, res.totalTime, station.VisitTime, station.NearestStations, InfoBoard.LineSetToString(station.Lines), station.Description, station.IsIntersection() ? transferTime : -1);
             }
             else
             {
-                InfoBoard.Instance.DisplayStationInfo(station.Name, station.ImageSprite, -1, station.VisitTime, InfoBoard.LineSetToString(station.Lines), station.Description, station.IsIntersection() ? transferTime : -1);
+                InfoBoard.Instance.DisplayStationInfo(station.Name, station.ImageSprite, -1, station.VisitTime, station.NearestStations, InfoBoard.LineSetToString(station.Lines), station.Description, station.IsIntersection() ? transferTime : -1);
             }
         }
     }
@@ -123,13 +123,13 @@ public class TourTokyo : MonoBehaviour
                 StartCoroutine(ClockTick(selectedStation.VisitTime, () =>
                 {
                     State = GameState.Arrived;
-                    MemoryPointUI.Instance.Points += selectedStation.Points;
+                    MemoryPointUI.Points += selectedStation.Points;
 
                     StartCoroutine(StampRallyUI.GenreStamps[selectedStation.genre].ActivateNext(() =>
                     {
                         if (StampRallyUI.GenreStamps[selectedStation.genre].GenreComplete())
                         {
-                            MemoryPointUI.Instance.Points += StampRallyUI.GenreStamps[selectedStation.genre].CompletionPoints;
+                            MemoryPointUI.Points += StampRallyUI.GenreStamps[selectedStation.genre].CompletionPoints;
                         }
 
                         if (CheckTime())
@@ -151,7 +151,7 @@ public class TourTokyo : MonoBehaviour
 
     bool CheckTime()
     {
-        if (TimeUI.Instance.GameTime > endTime)
+        if (TimeUI.GameTime > endTime)
         {
             return false;
         }
@@ -161,15 +161,15 @@ public class TourTokyo : MonoBehaviour
     IEnumerator ClockTick(int timeCost, Action callback)
     {
         float t = 0f;
-        int prevTime = TimeUI.Instance.GameTime;
+        int prevTime = TimeUI.GameTime;
         while (t < timeCost)
         {
             t += Time.deltaTime * tickSpeed;
-            TimeUI.Instance.GameTime = prevTime + (int)t;
+            TimeUI.GameTime = prevTime + (int)t;
             yield return null;
         }
 
-        TimeUI.Instance.GameTime = prevTime + timeCost;
+        TimeUI.GameTime = prevTime + timeCost;
         callback();
     }
 
@@ -193,11 +193,17 @@ public class TourTokyo : MonoBehaviour
     {
         if (destination == player.CurrentStation)
         {
+            callback();
             return;
         }
 
         TrainLine.TrainPath path = GetShortestPath(destination);
-        MovePlayer(path, callback);
+        AudioController.PlayTrain();
+        MovePlayer(path, () =>
+        {
+            AudioController.StopTrain();
+            callback();
+        });
     }
 
     void MovePlayer(TrainLine.TrainPath path, Action callback)

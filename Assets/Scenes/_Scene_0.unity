@@ -123,6 +123,134 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &15863328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 15863330}
+  - component: {fileID: 15863329}
+  m_Layer: 0
+  m_Name: TrainAudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &15863329
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15863328}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fc9cf2aeb7404364cbae9e5a9bf73f24, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &15863330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15863328}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1221461292}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &39234384
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +262,7 @@ GameObject:
   - component: {fileID: 39234385}
   - component: {fileID: 39234387}
   - component: {fileID: 39234386}
+  - component: {fileID: 39234388}
   m_Layer: 5
   m_Name: Board
   m_TagString: Untagged
@@ -198,6 +327,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39234384}
   m_CullTransparentMesh: 1
+--- !u!114 &39234388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39234384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f79a7a53436fd44870a1ebe90b0194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  click: {fileID: 8300000, guid: 1ed32377a4442b6478a5e950e177c7d0, type: 3}
 --- !u!1001 &46453407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -218,6 +360,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 020bfbc730858df47ae3076c236c8372, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Hibiya, Yurakucho
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: HibiyaPark
@@ -236,15 +382,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.351
+      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.117
+      value: -0.37
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -304,6 +450,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 5c679b38c33231d4f94e03b5b569e957, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Roppongi
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: RoppongiHills
@@ -416,7 +566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -491,7 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -535,6 +685,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: b637503b12119dd4092eeee5fe22fc00, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Roppongi
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: TheNationalArtCenter
@@ -652,7 +806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -872,7 +1026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1001,7 +1155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -150}
+  m_AnchoredPosition: {x: 0, y: -180}
   m_SizeDelta: {x: 480, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &357900938
@@ -1018,7 +1172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1067,7 +1221,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -1115,7 +1269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: genre
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: Points
@@ -1129,6 +1283,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 597c73a3bf65f5c4888544f4054479a8, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Ueno
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: UenoPark
@@ -1151,7 +1309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.02
+      value: 2.08
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1250,7 +1408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1325,7 +1483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1400,7 +1558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1614,7 +1772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1755,9 +1913,18 @@ PrefabInstance:
       value: Rainbow Bridge
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: Tamachi is a actually pretty far, you would probably want to take Yurikamome
+        from Shimbashi
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 6df97798bcae80b43970ebdb388f6d11, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Shibaura-futo, Tamachi (A bit far)
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: RainbowBridge
@@ -1839,6 +2006,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: b54c8068ea0fbcc48b7060e567800421, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Yoyogi, Harajuku
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: MeijiShrine
@@ -1857,7 +2028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9
+      value: -2.37
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1900,6 +2071,134 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+--- !u!1 &632245193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 632245195}
+  - component: {fileID: 632245194}
+  m_Layer: 0
+  m_Name: UniversalAudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &632245194
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632245193}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &632245195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632245193}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1221461292}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &680876729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,7 +2489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2265,7 +2564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2311,11 +2610,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4665debda2720ab469f49ab0a774e899, type: 2}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: stations.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: stations.Array.data[0]
@@ -2338,16 +2637,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 862555430}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: stations.Array.data[5]
+      value: 
+      objectReference: {fileID: 382422782}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: stations.Array.data[6]
+      value: 
+      objectReference: {fileID: 2126462974}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[1]
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[2]
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[3]
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: segmentTime.Array.data[4]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: segmentTime.Array.data[5]
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2418,6 +2733,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 36a356fa4cb7c1745874f2cafb352ea1, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Tokyo
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: ImperialPalace
@@ -2436,15 +2755,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3366996
+      value: 1.42
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.949
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2514,6 +2833,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 2e7b0aebc650bb84abc864278e76fdec, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Mitake
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: GhibliMuseum
@@ -2631,7 +2954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2675,6 +2998,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 3d22a5f207a671d48b3d57afa367dd2b, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Ginza, Higashi-ginza, Yurakucho
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: Ginza
@@ -2693,15 +3020,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.33
+      value: 2.24
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2
+      value: -0.47
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2748,6 +3075,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2847,6 +3175,22 @@ MonoBehaviour:
   startTime: 360
   endTime: 1200
   transferTime: 5
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49b4cc203aa6414fae5c798d1d0e7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1 &1003442920 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
@@ -2872,6 +3216,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: b52566bba3f621b4985e580b0119d9e4, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Asakusa
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: Senso-ji
@@ -2953,6 +3301,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 8f253d976205823438ef6b44fcb84cb0, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Harajuku
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: TakeshitaStreet
@@ -3028,7 +3380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: LineName
-      value: Green
+      value: Yamanote
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: lineMaterial
@@ -3088,47 +3440,47 @@ PrefabInstance:
       objectReference: {fileID: 4628820697188915593}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[0]
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[1]
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[2]
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[3]
-      value: 3
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[4]
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[5]
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[6]
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[7]
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[8]
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[9]
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[10]
-      value: 10
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3234,7 +3586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3408,7 +3760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3483,7 +3835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3507,6 +3859,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156143108}
   m_CullTransparentMesh: 1
+--- !u!1 &1221461290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1221461292}
+  - component: {fileID: 1221461291}
+  m_Layer: 0
+  m_Name: AudioSources
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1221461291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221461290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7a5a12b7043ce4f95520b9f85d5853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  universal: {fileID: 632245194}
+  train: {fileID: 15863329}
+  fadeDuration: 1
+--- !u!4 &1221461292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221461290}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 632245195}
+  - {fileID: 15863330}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1233245003 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
@@ -3697,7 +4098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3741,6 +4142,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 76efd473a8de586409f1c8455fd73288, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Akihabara
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: Akihabara
@@ -3763,7 +4168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.29
+      value: 1.38
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3818,6 +4223,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 1264eecf3849b6c47b6234476497db5a, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Oshiage
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: TokyoSkytree
@@ -3974,6 +4383,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1221461291}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 7874b9bbadd5e94439a2272fdfe234b3, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1412284818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4012,6 +4433,115 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412284815}
   m_CullTransparentMesh: 1
+--- !u!1001 &1418889667
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: LineName
+      value: Chuo & Sobu
+      objectReference: {fileID: 0}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: lineMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c73dd0e585aa4a4f8a38b7a6dae7be3, type: 2}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: stations.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: segmentTime.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: stations.Array.data[0]
+      value: 
+      objectReference: {fileID: 927308940}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: stations.Array.data[1]
+      value: 
+      objectReference: {fileID: 1798169971}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: stations.Array.data[2]
+      value: 
+      objectReference: {fileID: 1690064231}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: stations.Array.data[3]
+      value: 
+      objectReference: {fileID: 862555430}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: stations.Array.data[4]
+      value: 
+      objectReference: {fileID: 1233245003}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: segmentTime.Array.data[0]
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: segmentTime.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: segmentTime.Array.data[2]
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: segmentTime.Array.data[3]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839906958935900260, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: m_Name
+      value: ChuoSobuLine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
 --- !u!1001 &1428384260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4058,7 +4588,15 @@ PrefabInstance:
       objectReference: {fileID: 1525163160}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[0]
-      value: 10
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: segmentTime.Array.data[2]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: segmentTime.Array.data[3]
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4149,6 +4687,7 @@ RectTransform:
   - {fileID: 452171438}
   - {fileID: 1722029190}
   - {fileID: 226946767}
+  - {fileID: 1726199540}
   - {fileID: 357900937}
   - {fileID: 1904419099}
   m_Father: {fileID: 526522699}
@@ -4156,7 +4695,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 500}
+  m_SizeDelta: {x: 500, y: 600}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1457263495
 MonoBehaviour:
@@ -4172,7 +4711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4214,6 +4753,7 @@ MonoBehaviour:
   visitTime: {fileID: 226946768}
   lines: {fileID: 357900938}
   description: {fileID: 1904419100}
+  stations: {fileID: 1726199541}
 --- !u!1 &1473599611
 GameObject:
   m_ObjectHideFlags: 0
@@ -4265,7 +4805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4379,7 +4919,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480214663}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4407,6 +4947,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 8e6f3daf5e9f168419ff6b6d45b923b3, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Akabanebashi
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: TokyoTower
@@ -4478,7 +5022,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: LineName
-      value: Chuo
+      value: Chuo(Rapid)
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: lineMaterial
@@ -4486,11 +5030,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 25a26c9cda012ec4385788ed4d6bd9c6, type: 2}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: stations.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: stations.Array.data[0]
@@ -4503,22 +5047,22 @@ PrefabInstance:
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: stations.Array.data[2]
       value: 
-      objectReference: {fileID: 1003442920}
+      objectReference: {fileID: 47892589}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: stations.Array.data[3]
       value: 
       objectReference: {fileID: 47892589}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[0]
-      value: 1
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[1]
-      value: 1
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[2]
-      value: 1
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4562,7 +5106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5839906958935900260, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: m_Name
-      value: ChuoLine
+      value: ChuoRapidLine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4761,6 +5305,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1221461291}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 7874b9bbadd5e94439a2272fdfe234b3, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1566546118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4809,7 +5365,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: LineName
-      value: Asakusa
+      value: Asakusa(Rapid)
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: lineMaterial
@@ -4835,6 +5391,14 @@ PrefabInstance:
       propertyPath: stations.Array.data[2]
       value: 
       objectReference: {fileID: 208901512}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: segmentTime.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: segmentTime.Array.data[1]
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4935,7 +5499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4979,6 +5543,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 3e509b059a2e5eb4e8d9d8e9e7ccefae, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: JR Ryogoku, Toei Ryogoku
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: Edo-TokyoMusuem
@@ -5001,11 +5569,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.71
+      value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5096,7 +5664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5171,7 +5739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5246,7 +5814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5329,6 +5897,140 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722029189}
   m_CullTransparentMesh: 1
+--- !u!1 &1726199539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1726199540}
+  - component: {fileID: 1726199542}
+  - component: {fileID: 1726199541}
+  m_Layer: 5
+  m_Name: StationName
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1726199540
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726199539}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1457263494}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -150}
+  m_SizeDelta: {x: 480, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1726199541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726199539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Nearest Stations: '
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1726199542
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726199539}
+  m_CullTransparentMesh: 1
 --- !u!1 &1727180289
 GameObject:
   m_ObjectHideFlags: 0
@@ -5386,7 +6088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5448,6 +6150,7 @@ MonoBehaviour:
     Gray: {fileID: 21300000, guid: 00bd696c573eb6e48af47df8c2b5f343, type: 3}
     Group: {fileID: 2060866363}
     CompletionPoints: 100
+  stampSound: {fileID: 8300000, guid: a3de395186638284b82b021e3c60c9fc, type: 3}
 --- !u!1001 &1764889382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5459,6 +6162,10 @@ PrefabInstance:
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: isLoop
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
+      propertyPath: LineName
+      value: Toei Oedo
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: lineMaterial
@@ -5479,7 +6186,7 @@ PrefabInstance:
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: stations.Array.data[1]
       value: 
-      objectReference: {fileID: 1003442920}
+      objectReference: {fileID: 1690064231}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: stations.Array.data[2]
       value: 
@@ -5502,23 +6209,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[1]
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[2]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[3]
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[4]
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[5]
-      value: 1
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5599,6 +6306,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 37188857c51e21d41858517e73146437, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Odaiba-kaihinkoen
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: OdaibaSeasidePark
@@ -5676,6 +6387,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: aeb44c4392035d3469a255f8678f04ae, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Shibuya
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: ShibuyaCrossing
@@ -5788,7 +6503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5867,7 +6582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5933,11 +6648,11 @@ PrefabInstance:
       objectReference: {fileID: 47892589}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[0]
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -2737134702608894091, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: segmentTime.Array.data[1]
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6022,8 +6737,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -155}
-  m_SizeDelta: {x: 480, y: 90}
+  m_AnchoredPosition: {x: 0, y: -215}
+  m_SizeDelta: {x: 480, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1904419100
 MonoBehaviour:
@@ -6039,7 +6754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6173,7 +6888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6276,6 +6991,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 1f9751b119e4f5749bade133be95e110, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Shinjuku
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: ShinjukuGyoen
@@ -6390,7 +7109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6465,7 +7184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6545,7 +7264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6620,7 +7339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6718,7 +7437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6793,7 +7512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6868,7 +7587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6944,7 +7663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7053,12 +7772,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: genre
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: cce69bc056b83ee4fb546afb49823510, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Ueno
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: TokyoNationalMuseum
@@ -7081,7 +7804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.81
+      value: 2.87
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7176,7 +7899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7284,6 +8007,10 @@ PrefabInstance:
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 0116d26dd49c1f84fb9b94b66e9da357, type: 3}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: NearestStations
+      value: Nippori
+      objectReference: {fileID: 0}
     - target: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_Name
       value: YanakaGinza
@@ -7361,6 +8088,7 @@ SceneRoots:
   - {fileID: 4329125153712343638}
   - {fileID: 1049811945}
   - {fileID: 1501678979}
+  - {fileID: 1418889667}
   - {fileID: 1764889382}
   - {fileID: 1898495613}
   - {fileID: 1428384260}
@@ -7389,3 +8117,4 @@ SceneRoots:
   - {fileID: 1819007582}
   - {fileID: 1931731053}
   - {fileID: 720246521}
+  - {fileID: 1221461292}

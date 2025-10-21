@@ -5,20 +5,15 @@ using UnityEngine;
 
 public class MemoryPointUI : MonoBehaviour
 {
-    private TextMeshProUGUI text;
-    private int _points = 0;
-    public static MemoryPointUI Instance;
-    void Awake()
-    {
-        Instance = this;
-    }
+    private static TextMeshProUGUI text;
+    private static int _points = 0;
 
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
     }
 
-    public int Points
+    public static int Points
     {
         get => _points;
         set

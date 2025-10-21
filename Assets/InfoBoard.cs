@@ -14,6 +14,8 @@ public class InfoBoard : MonoBehaviour
     [SerializeField] private TextMeshProUGUI visitTime;
     [SerializeField] private TextMeshProUGUI lines;
     [SerializeField] private TextMeshProUGUI description;
+
+    [SerializeField] private TextMeshProUGUI stations;
     public static InfoBoard Instance;
 
     void Awake()
@@ -22,10 +24,11 @@ public class InfoBoard : MonoBehaviour
     }
 
 
-    public void DisplayStationInfo(string name, Sprite image, int timeCost, int visitTime, string lineNames, string newDescription, int transferTime = -1)
+    public void DisplayStationInfo(string name, Sprite image, int timeCost, int visitTime, string stationNames, string lineNames, string newDescription, int transferTime = -1)
     {
         nameText.text = name;
         infoImage.sprite = image;
+        stations.text = $"Nearest Stations: {stationNames}";
         lines.text = $"Train Lines: {lineNames}";
         time.text = timeCost == -1 ? "Unreachable without Transfer" : $"Estimated Time: <b>{timeCost} min</b>";
         this.visitTime.text = $"Visit Time: <b>{visitTime} min</b>{((transferTime == -1) ? "" : $"  Transfer Time: <b>{transferTime} min</b>")}";

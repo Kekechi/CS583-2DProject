@@ -27,17 +27,17 @@ public class Player : MonoBehaviour
         Vector3 startPos = transform.position;
         Vector3 targetPos = targetStation.transform.position + playerStationOffset;
         float t = 0f;
-        int prevTime = TimeUI.Instance.GameTime;
+        int prevTime = TimeUI.GameTime;
 
         while (t < 1f)
         {
             t += Time.deltaTime / duration;
-            TimeUI.Instance.GameTime = prevTime + (int)(t * timeCost);
+            TimeUI.GameTime = prevTime + (int)(t * timeCost);
             transform.position = Vector3.Lerp(startPos, targetPos, t);
             yield return null;
         }
 
-        TimeUI.Instance.GameTime = prevTime + timeCost;
+        TimeUI.GameTime = prevTime + timeCost;
         isMoving = false;
         CurrentStation = targetStation;
         transform.position = targetPos;
