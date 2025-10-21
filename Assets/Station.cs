@@ -16,6 +16,7 @@ public class Station : MonoBehaviour
     public string Description;
     public int VisitTime;
     public int Points;
+    public TourTokyo.Genre genre;
     private Material material;
 
     void Awake()

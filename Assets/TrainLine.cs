@@ -32,7 +32,6 @@ public class TrainLine : MonoBehaviour
     [SerializeField] private GameObject segmentPrefab;
     [SerializeField] private Material lineMaterial;
     [SerializeField] private Color emission;
-    [SerializeField] int layer;
     public string LineName;
     private LineRenderer[] segments;
     private Dictionary<GameObject, int> stationIndex = new();

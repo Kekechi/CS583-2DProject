@@ -7,6 +7,7 @@ public class TourTokyo : MonoBehaviour
 {
     public static TourTokyo Instance { get; private set; }
     public enum GameState { GameStart, IdleOnStation, StationSelected, Moving, Arrived, GameEnd }
+    public enum Genre { Landmark, Culture, Museum, Nature, Shopping };
     public GameState State { get; private set; }
     [SerializeField] private GameObject startStation;
     [SerializeField] private Player player;
@@ -14,6 +15,7 @@ public class TourTokyo : MonoBehaviour
     [SerializeField] private int startTime;
     [SerializeField] private int endTime;
     [SerializeField] private int transferTime = 5;
+
     private Station selectedStation;
 
     void Awake()
@@ -29,6 +31,7 @@ public class TourTokyo : MonoBehaviour
         State = GameState.IdleOnStation;
         TimeUI.Instance.GameTime = startTime;
         OffsetOverlappingLines(0.1f);
+        InfoBoard.Instance.DisableDisplay();
     }
 
     public void OnHoverEnterStation(Station station)
@@ -102,6 +105,7 @@ public class TourTokyo : MonoBehaviour
                 {
                     State = GameState.Arrived;
                     State = GameState.IdleOnStation;
+                    InfoBoard.Instance.DisableDisplay();
                 }));
             });
             VisitButtonUI.Instance.HideButton();
@@ -120,14 +124,25 @@ public class TourTokyo : MonoBehaviour
                 {
                     State = GameState.Arrived;
                     MemoryPointUI.Instance.Points += selectedStation.Points;
-                    if (CheckTime())
+
+                    StartCoroutine(StampRallyUI.GenreStamps[selectedStation.genre].ActivateNext(() =>
                     {
-                        State = GameState.IdleOnStation;
-                    }
-                    else
-                    {
-                        State = GameState.GameEnd;
-                    }
+                        if (StampRallyUI.GenreStamps[selectedStation.genre].GenreComplete())
+                        {
+                            MemoryPointUI.Instance.Points += StampRallyUI.GenreStamps[selectedStation.genre].CompletionPoints;
+                        }
+
+                        if (CheckTime())
+                        {
+                            State = GameState.IdleOnStation;
+                        }
+                        else
+                        {
+                            State = GameState.GameEnd;
+                        }
+                        InfoBoard.Instance.DisableDisplay();
+                    }));
+
                 }));
             });
             VisitButtonUI.Instance.HideButton();

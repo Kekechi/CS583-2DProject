@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
+using System.Linq;
 
 public class InfoBoard : MonoBehaviour
 {
@@ -38,11 +40,6 @@ public class InfoBoard : MonoBehaviour
 
     public static string LineSetToString(HashSet<TrainLine> lines)
     {
-        string lineStr = "";
-        foreach (TrainLine l in lines)
-        {
-            lineStr += l.LineName + " ";
-        }
-        return lineStr;
+        return String.Join(", ", lines.Select(x => x.LineName));
     }
 }
