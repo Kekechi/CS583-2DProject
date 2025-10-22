@@ -6,22 +6,24 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject CurrentStation { get; private set; }
-    private bool isMoving;
     [SerializeField] private Vector3 playerStationOffset;
     [SerializeField] private float duration = 1f;
 
+    // Set position to startStation, set CurrentStation 
     public void Initialize(GameObject startStation)
     {
         CurrentStation = startStation;
         transform.position = startStation.transform.position + playerStationOffset;
     }
 
+    // Start Player movement to destination station (Linearly)
+    // call onComplete after player reaches the destination
     public void SelectDestination(GameObject station, int timeCost, Action onComplete)
     {
-        isMoving = true;
         StartCoroutine(AnimateMovement(station, timeCost, onComplete));
     }
 
+    // The animation function to run as coroutine to move player to destination over time
     IEnumerator AnimateMovement(GameObject targetStation, int timeCost, Action onComplete)
     {
         Vector3 startPos = transform.position;
@@ -38,7 +40,6 @@ public class Player : MonoBehaviour
         }
 
         TimeUI.GameTime = prevTime + timeCost;
-        isMoving = false;
         CurrentStation = targetStation;
         transform.position = targetPos;
         onComplete?.Invoke();

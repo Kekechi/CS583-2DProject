@@ -21,6 +21,7 @@ public class InfoBoard : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        DisableDisplay();
     }
 
 
