@@ -261,7 +261,7 @@ MonoBehaviour:
   Name: Default Name
   ImageSprite: {fileID: 21300000, guid: 91049c407bc6f6148a1dae35bae89b67, type: 3}
   Description: Default Description
-  VisitTime: 60
+  VisitTime: 120
   Points: 100
   NearestStations: 
   genre: 0

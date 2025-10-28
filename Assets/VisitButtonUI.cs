@@ -40,10 +40,11 @@ public class VisitButtonUI : MonoBehaviour
     /// </summary>
     /// <param name="isIntersection">True if station has multiple train lines (allows transfer)</param>
     /// IMPROVEMENT: Consider passing Station object instead of bool for more flexibility
-    public void DisplayButton(bool isIntersection)
+    public void DisplayButton(bool allowVisit, bool isIntersection)
     {
         gameObject.SetActive(true);
         // Transfer button only works at intersection stations with multiple lines
+        visit.interactable = allowVisit;
         transfer.interactable = isIntersection;
     }
 

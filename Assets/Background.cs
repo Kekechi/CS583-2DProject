@@ -22,5 +22,6 @@ public class Background : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         AudioController.PlayClip(click);
+        TourTokyo.Instance.DeselectStation();
     }
 }

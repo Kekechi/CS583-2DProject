@@ -58,6 +58,8 @@ public class TourTokyo : MonoBehaviour
     // Currently selected station (when player clicks a station)
     private Station selectedStation;
 
+    private HashSet<Station> visitedStations;
+
     /// <summary>
     /// Initialize singleton and set initial game state
     /// CONSISTENCY: Good - uses Awake() for singleton initialization
@@ -67,6 +69,7 @@ public class TourTokyo : MonoBehaviour
     {
         Instance = this;
         State = GameState.GameStart;
+        visitedStations = new HashSet<Station>();
     }
 
     /// <summary>
@@ -205,7 +208,7 @@ public class TourTokyo : MonoBehaviour
                 selectedStation = station;
 
                 // Show visit button, enable transfer button if intersection
-                VisitButtonUI.Instance.DisplayButton(station.Lines.Count > 1);
+                VisitButtonUI.Instance.DisplayButton(!visitedStations.Contains(station), station.Lines.Count > 1);
             }
         }
     }
@@ -254,6 +257,7 @@ public class TourTokyo : MonoBehaviour
         if (State == GameState.StationSelected)
         {
             State = GameState.Moving;
+            visitedStations.Add(selectedStation);
 
             // Move player to destination
             TraversePath(selectedStation.gameObject, () =>
