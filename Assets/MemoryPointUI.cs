@@ -27,6 +27,7 @@ public class MemoryPointUI : MonoBehaviour
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
+        _points = 0;
     }
 
     /// <summary>
