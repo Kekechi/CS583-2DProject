@@ -1269,7 +1269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: genre
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: Points
@@ -2809,6 +2809,81 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
   m_PrefabInstance: {fileID: 544146202}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &840403051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 840403052}
+  - component: {fileID: 840403054}
+  - component: {fileID: 840403053}
+  m_Layer: 5
+  m_Name: GenreImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &840403052
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840403051}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1457263494}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 182.7, y: 234.4}
+  m_SizeDelta: {x: 120, y: 120}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &840403053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840403051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 28f1bd0d04ad7f5419c0f83e95131a8e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &840403054
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840403051}
+  m_CullTransparentMesh: 1
 --- !u!1 &862555430 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5091045363383599502, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
@@ -3176,6 +3251,7 @@ MonoBehaviour:
   startTime: 360
   endTime: 1200
   transferTime: 5
+  overlapOffset: 0.15
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5196,6 +5272,7 @@ RectTransform:
   - {fileID: 1726199540}
   - {fileID: 357900937}
   - {fileID: 1904419099}
+  - {fileID: 840403052}
   m_Father: {fileID: 526522699}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
@@ -5260,6 +5337,7 @@ MonoBehaviour:
   lines: {fileID: 357900938}
   description: {fileID: 1904419100}
   stations: {fileID: 1726199541}
+  genreImage: {fileID: 840403053}
 --- !u!1 &1473599611
 GameObject:
   m_ObjectHideFlags: 0
@@ -5448,6 +5526,11 @@ PrefabInstance:
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: Name
       value: Tokyo Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: "Go at sunset\u2014the orange glow on the skyline is pure magic (and
+        fewer crowds than Skytree)."
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
@@ -7053,7 +7136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.45
+      value: -1.393
       objectReference: {fileID: 0}
     - target: {fileID: 8431925957332670282, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8412,7 +8495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: genre
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite

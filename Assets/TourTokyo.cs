@@ -55,6 +55,8 @@ public class TourTokyo : MonoBehaviour
     [Tooltip("The amount to offset overlapping lines by")]
     [SerializeField] private float overlapOffset = 0.15f;   // Visual offset for overlapping train lines
 
+    [SerializeField] private AudioClip genreComplete;
+
     // Currently selected station (when player clicks a station)
     private Station selectedStation;
 
@@ -297,6 +299,7 @@ public class TourTokyo : MonoBehaviour
                         {
                             // Award completion bonus points
                             MemoryPointUI.Points += StampRallyUI.GenreStamps[selectedStation.genre].CompletionPoints;
+                            AudioController.PlayClip(genreComplete);
                         }
 
                         // Check if time limit exceeded
