@@ -16,12 +16,15 @@ public class Background : MonoBehaviour, IPointerClickHandler
 
     /// <summary>
     /// Unity Event System callback when pointer clicks on this UI element
-    /// Plays click sound through AudioController
+    /// Clicking background deselects currently selected station
+    /// This allows player to cancel selection without committing to visit/transfer
+    /// Plays click sound and calls TourTokyo to deselect station
     /// IMPROVEMENT: Check if click is null before playing
     /// </summary>
     public void OnPointerClick(PointerEventData eventData)
     {
         AudioController.PlayClip(click);
+        // Deselect station when clicking outside of station/UI buttons
         TourTokyo.Instance.DeselectStation();
     }
 }

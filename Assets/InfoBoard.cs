@@ -23,6 +23,9 @@ public class InfoBoard : MonoBehaviour
     [SerializeField] private TextMeshProUGUI lines;               // Train lines serving this station
     [SerializeField] private TextMeshProUGUI description;         // Station description text
     [SerializeField] private TextMeshProUGUI stations;            // Nearby stations list
+    // Display genre icon on info board
+    // Shows visual indicator of station type (Landmark, Culture, Museum, etc.)
+    [SerializeField] private Image genreImage;
 
     // Singleton instance for global access
     // IMPROVEMENT: Should be private with public property
@@ -53,7 +56,7 @@ public class InfoBoard : MonoBehaviour
     /// <param name="transferTime">Optional transfer time if switching lines</param>
     /// IMPROVEMENT: Replace many parameters with StationData class or struct
     /// IMPROVEMENT: Add null checks for string parameters
-    public void DisplayStationInfo(string name, Sprite image, int timeCost, int visitTime, string stationNames, string lineNames, string newDescription, int transferTime = -1)
+    public void DisplayStationInfo(string name, Sprite image, int timeCost, int visitTime, string stationNames, string lineNames, string newDescription, TourTokyo.Genre genre, int transferTime = -1)
     {
         // Populate all UI text fields with station information
         nameText.text = name;
@@ -65,6 +68,9 @@ public class InfoBoard : MonoBehaviour
         // Display visit time, optionally including transfer time
         this.visitTime.text = $"Visit Time: <b>{visitTime} min</b>{((transferTime == -1) ? "" : $"  Transfer Time: <b>{transferTime} min</b>")}";
         description.text = newDescription;
+        // Display genre icon from stamp rally system
+        // Provides visual consistency between info board and stamp collection UI
+        genreImage.sprite = StampRallyUI.GenreStamps[genre].Icon;
         // Show the info board
         gameObject.SetActive(true);
     }

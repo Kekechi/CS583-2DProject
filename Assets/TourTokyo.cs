@@ -58,6 +58,9 @@ public class TourTokyo : MonoBehaviour
     // Currently selected station (when player clicks a station)
     private Station selectedStation;
 
+    // Track visited stations to prevent multiple visits
+    // HashSet provides O(1) lookup to check if station was already visited
+    // Used to disable Visit button and prevent point farming
     private HashSet<Station> visitedStations;
 
     /// <summary>
@@ -69,6 +72,7 @@ public class TourTokyo : MonoBehaviour
     {
         Instance = this;
         State = GameState.GameStart;
+        // Initialize visited stations tracking
         visitedStations = new HashSet<Station>();
     }
 
@@ -122,6 +126,7 @@ public class TourTokyo : MonoBehaviour
                     station.NearestStations,
                     InfoBoard.LineSetToString(station.Lines),
                     station.Description,
+                    station.genre,
                     station.IsIntersection() ? transferTime : -1
                 );
             }
@@ -136,6 +141,7 @@ public class TourTokyo : MonoBehaviour
                     station.NearestStations,
                     InfoBoard.LineSetToString(station.Lines),
                     station.Description,
+                    station.genre,
                     station.IsIntersection() ? transferTime : -1
                 );
             }
@@ -175,7 +181,8 @@ public class TourTokyo : MonoBehaviour
 
     /// <summary>
     /// Deselects currently selected station and returns to idle state
-    /// Called when player clicks background or cancels selection
+    /// Called when player clicks background to cancel selection
+    /// Allows player to change their mind without committing to visit/transfer
     /// IMPROVEMENT: Fire UnityEvent when deselection occurs
     /// </summary>
     public void DeselectStation()
@@ -183,6 +190,7 @@ public class TourTokyo : MonoBehaviour
         if (State == GameState.StationSelected)
         {
             State = GameState.IdleOnStation;
+            // Hide the Visit/Transfer buttons when deselecting
             VisitButtonUI.Instance.HideButton();
         }
     }
@@ -207,8 +215,11 @@ public class TourTokyo : MonoBehaviour
                 State = GameState.StationSelected;
                 selectedStation = station;
 
-                // Show visit button, enable transfer button if intersection
-                VisitButtonUI.Instance.DisplayButton(!visitedStations.Contains(station), station.Lines.Count > 1);
+                //  Check if station was already visited
+                // Visit button disabled if already visited (only one visit allowed per station)
+                // Transfer button enabled if station is intersection (multiple lines)
+                bool alreadyVisited = visitedStations.Contains(station);
+                VisitButtonUI.Instance.DisplayButton(!alreadyVisited, station.Lines.Count > 1);
             }
         }
     }
@@ -257,6 +268,8 @@ public class TourTokyo : MonoBehaviour
         if (State == GameState.StationSelected)
         {
             State = GameState.Moving;
+            // NEW FEATURE: Mark station as visited to prevent revisits
+            // Ensures players can only visit each station once for points
             visitedStations.Add(selectedStation);
 
             // Move player to destination
