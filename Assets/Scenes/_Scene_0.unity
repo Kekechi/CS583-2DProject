@@ -357,6 +357,11 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: "A calm lunch spot near the Imperial Palace\u2014grab coffee from Hibiya
+        Midtown next door."
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 020bfbc730858df47ae3076c236c8372, type: 3}
@@ -445,6 +450,11 @@ PrefabInstance:
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: genre
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: Visit the observation deck at sunset, then explore the Mori Art Museum
+        right next door.
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
@@ -680,6 +690,11 @@ PrefabInstance:
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: genre
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: "Exhibits rotate monthly\u2014check the website before going, and stop
+        by the sleek caf\xE9 afterward."
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
@@ -1278,6 +1293,11 @@ PrefabInstance:
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: VisitTime
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: Visit in spring for cherry blossoms, or rent a rowboat on Shinobazu
+        Pond in summer.
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
@@ -1916,7 +1936,7 @@ PrefabInstance:
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: Description
       value: Tamachi is a actually pretty far, you would probably want to take Yurikamome
-        from Shimbashi
+        from Shimbashi.
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
@@ -2002,6 +2022,11 @@ PrefabInstance:
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: genre
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: "Walk through the massive torii gates in silence\u2014it feels like
+        teleporting out of Tokyo\u2019s noise."
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
@@ -2731,6 +2756,11 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: "Visit the East Gardens\u2014no fee, and it\u2019s a peaceful green
+        break near Tokyo Station."
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 36a356fa4cb7c1745874f2cafb352ea1, type: 3}
@@ -2906,6 +2936,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: "Tickets sell out fast\u2014book online a month ahead, and photography
+        inside is not allowed."
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 2e7b0aebc650bb84abc864278e76fdec, type: 3}
@@ -3069,6 +3104,11 @@ PrefabInstance:
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: genre
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: "Go on Sunday\u2014the main street becomes pedestrian-only, ideal for
+        window shopping."
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
@@ -3252,6 +3292,7 @@ MonoBehaviour:
   endTime: 1200
   transferTime: 5
   overlapOffset: 0.15
+  genreComplete: {fileID: 8300000, guid: 911da2d08463ef04b997137ade73fd06, type: 3}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3288,6 +3329,11 @@ PrefabInstance:
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: genre
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: "Arrive early to beat tour crowds, and grab fresh ningy\u014D-yaki (sweet
+        cakes) on Nakamise Street."
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
@@ -3373,6 +3419,11 @@ PrefabInstance:
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: genre
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: "Arrive before noon to avoid crowds, and try a crepe from Angel\u2019s
+        Heart or Marion."
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
@@ -4587,6 +4638,11 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: Check out the retro game shops in back alleys, not just the flashy big
+        stores.
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: 76efd473a8de586409f1c8455fd73288, type: 3}
@@ -4800,6 +4856,11 @@ PrefabInstance:
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: Name
       value: Tokyo Skytree
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: "Buy tickets online to skip the queue, and don\u2019t miss the Sumida
+        Aquarium at its base."
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
@@ -5085,7 +5146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5663,7 +5724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6261,6 +6322,11 @@ PrefabInstance:
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: genre
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: "Closed for renovation until 2025\u2014check updates, but nearby Ry\u014Dgoku
+        still offers sumo culture to explore."
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
@@ -6960,7 +7026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 873384209208968649, guid: 193a7331b2a59eb459b3a33020555ecc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7024,6 +7090,11 @@ PrefabInstance:
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: genre
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: "Go around dusk to catch Rainbow Bridge lighting up\u2014it\u2019s perfect
+        for night photography."
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
@@ -7105,6 +7176,11 @@ PrefabInstance:
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: Name
       value: Shibuya Crossing
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: "Watch the organized chaos from the Starbucks window\u2014it\u2019s
+        the best view for free."
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
@@ -7709,6 +7785,11 @@ PrefabInstance:
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: genre
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: Take a quiet walk in the middle of the city; the hidden greenhouse is
+        a pleasant surprise.
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
@@ -8498,6 +8579,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
+      propertyPath: Description
+      value: "Focus on the samurai armor and ukiyo-e prints\u2014two floors are plenty
+        for a short visit."
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
       value: 
       objectReference: {fileID: 21300000, guid: cce69bc056b83ee4fb546afb49823510, type: 3}
@@ -8724,7 +8810,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: Description
-      value: Tokyo Station
+      value: "Try the famous croquettes and stroll during sunset\u2014the retro vibe
+        is peak \u201Cold Tokyo.\u201D"
       objectReference: {fileID: 0}
     - target: {fileID: -2792729885024877559, guid: 09acd844c0962564da35eff629e5afc1, type: 3}
       propertyPath: ImageSprite
@@ -8819,25 +8906,25 @@ SceneRoots:
   - {fileID: 1120942148}
   - {fileID: 273512155}
   - {fileID: 793116857}
+  - {fileID: 1492123222}
+  - {fileID: 1404110273}
+  - {fileID: 1819007582}
+  - {fileID: 544146202}
+  - {fileID: 1013299038}
+  - {fileID: 811664627}
+  - {fileID: 561997197}
+  - {fileID: 4628820697188915592}
+  - {fileID: 2126462973}
+  - {fileID: 194949243}
+  - {fileID: 1675096122}
   - {fileID: 869655764}
   - {fileID: 382422781}
-  - {fileID: 2126462973}
-  - {fileID: 1492123222}
-  - {fileID: 4628820697188915592}
-  - {fileID: 1404110273}
-  - {fileID: 194949243}
-  - {fileID: 1013299038}
-  - {fileID: 77299106}
-  - {fileID: 544146202}
-  - {fileID: 811664627}
-  - {fileID: 1818977509}
-  - {fileID: 46453407}
-  - {fileID: 962507456}
-  - {fileID: 1675096122}
-  - {fileID: 1365014885}
-  - {fileID: 1032902194}
-  - {fileID: 561997197}
-  - {fileID: 1819007582}
   - {fileID: 1931731053}
+  - {fileID: 46453407}
+  - {fileID: 1818977509}
+  - {fileID: 962507456}
+  - {fileID: 1032902194}
+  - {fileID: 1365014885}
+  - {fileID: 77299106}
   - {fileID: 720246521}
   - {fileID: 1221461292}
