@@ -192,6 +192,8 @@ public class TourTokyo : MonoBehaviour
             State = GameState.IdleOnStation;
             // Hide the Visit/Transfer buttons when deselecting
             VisitButtonUI.Instance.HideButton();
+            InfoBoard.Instance.DisableDisplay();
+            DisablePathHighlight(selectedStation.Lines);
         }
     }
 
