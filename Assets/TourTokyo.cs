@@ -210,7 +210,7 @@ public class TourTokyo : MonoBehaviour
             var res = GetShortestPath(station.gameObject);
 
             // Only allow selection if station is reachable
-            if (res.path.Length > 0)
+            if (res.path.Length > 0 || station.gameObject == player.CurrentStation)
             {
                 State = GameState.StationSelected;
                 selectedStation = station;
