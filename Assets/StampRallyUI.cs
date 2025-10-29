@@ -81,8 +81,6 @@ public class StampRallyUI : MonoBehaviour
                 float t = 0f;                 // Interpolation parameter
                 float startScale = 2f;        // Stamp starts at 2x size
                 float finalScale = 1f;        // Ends at normal size
-                float startRot = 90f;         // Rotation parameters (currently unused)
-                float finalRot = 0f;
 
                 // Change sprite from gray to colored icon
                 images[i].sprite = Icon;
